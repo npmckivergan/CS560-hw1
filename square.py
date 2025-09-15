@@ -17,20 +17,36 @@ class TurtleController(Node):
         return msg
 
     def get_twist_msg(self):
+
+        # Move straight
         if self.time < 5:
             msg = self.create_twist(1.0, 0.0)
+
+        # Turn 90 degrees
         elif self.time >= 6 and self.time < 8:
             msg = self.create_twist(0.0, 1.6)
+
+        # Move straight
         elif self.time >= 9 and self.time < 14:
             msg = self.create_twist(1.0, 0.0)
+        
+        # Turn 90 degrees
         elif self.time >= 15 and self.time < 17:
             msg = self.create_twist(0.0, 1.6)
+
+        # Move straight
         elif self.time >= 18 and self.time < 23:
             msg = self.create_twist(1.0, 0.0)
+
+        # Turn 90 degrees
         elif self.time >= 24 and self.time < 26:
             msg = self.create_twist(0.0, 1.6)
+
+        # Move straight
         elif self.time >= 27 and self.time < 32:
             msg = self.create_twist(1.0, 0.0)
+
+        # Stop motion
         else:
             msg = self.create_twist(0.0, 0.0)
         return msg

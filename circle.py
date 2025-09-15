@@ -17,8 +17,12 @@ class TurtleController(Node):
         return msg
 
     def get_twist_msg(self):
+
+        # Fixed angular and linear velocity for the appropriate amount of time to complete the circle
         if self.time < 13:
             msg = self.create_twist(1.0, 1.0)
+
+        # Stop motion after circle is complete
         else:
             msg = self.create_twist(0.0, 0.0)
         return msg

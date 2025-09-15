@@ -20,6 +20,8 @@ class TurtleController(Node):
 
     def get_twist_msg(self):
 
+        # Turn to a random direction and draw an arrow
+
         # Orient in a random direction
         if self.time < 4:
             msg = self.create_twist(0.0, self.spin)
