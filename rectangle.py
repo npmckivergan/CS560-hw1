@@ -4,7 +4,7 @@ from geometry_msgs.msg import Twist
 
 class TurtleController(Node):
     def __init__(self):
-        super().__init__('square')
+        super().__init__('rectangle')
         self.publisher = self.create_publisher(Twist, '/turtle1/cmd_vel', 10)
         timer_period = 0.5  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
